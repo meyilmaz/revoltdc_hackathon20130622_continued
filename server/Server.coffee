@@ -1,7 +1,7 @@
 Meteor.Router.add
     '/test':'somedata'
     
-sunlight_api_key = "yourapikey"
+sunlight_api_key = "myapikey"
         
 Meteor.methods 
     checkSunlight: (query) ->
@@ -18,7 +18,6 @@ Meteor.methods
             return resulting  
         false        
     checkCapitolWords: (query) ->
-        @unblock()
         result = Meteor.http.call('GET',"http://congress.api.sunlightfoundation.com/legislators",
             params:
                 "apikey": sunlight_api_key,

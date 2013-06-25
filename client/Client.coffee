@@ -6,6 +6,7 @@ Meteor.methods
     checkSunlight: (query) ->
         return "Loading"
     
+    
 Meteor.Router.add
     '/test':'somedata',
     '/nice/:query': (query)->
@@ -15,9 +16,9 @@ Meteor.Router.add
             )
             return "nice"
     '/capitol/:query': (query)->
-            Meteor.call("checkCapitolWords", query,
+            Meteor.apply("checkCapitolWords", {query},true,
                 (err,res)->
-                    console.log("test")
+                    console.log(err)
                     Session.set("result",res)
             )
             return "capitol"
