@@ -6,6 +6,7 @@
   "packages": {
     "router": {},
     "jquery-ui": {},
-    "observatory": {}
+    "observatory": {},
+    "d3-cloud": {}
   }
 }
