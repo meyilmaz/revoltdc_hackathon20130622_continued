@@ -16,8 +16,11 @@ Meteor.Router.add
             )
             return "nice"
     '/capitol/:query': (query)->
-            Meteor.apply("checkCapitolWords", {query},true,
-                (err,res)->
+            Meteor.apply("checkCapitolWords", [query],[true,
+                                                       (err,res)->
+                                                          Session.set("result",res)
+                                                       
+                                                       ], (err,res)->
                     console.log(err)
                     Session.set("result",res)
             )
