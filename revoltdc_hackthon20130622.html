@@ -1,11 +1,9 @@
 <head>
   <title>revoltdc_hackthon20130622 -  {{title}}</title>
-   
-    <script src="https://raw.github.com/zenkay/d3-cloud-simplified/master/d3.cloud.simplified.js" type="javascript"></script>
-    <script src="https://raw.github.com/zenkay/d3-cloud-simplified/master/lib/d3-cloud/d3.layout.cloud.js" type="javascript"></script>
 </head>
 
 <body>
+  {{> header}}
   {{renderPage}}
 </body>
 
@@ -14,6 +12,8 @@
   {{greeting}}
   <input type="button" value="Click" />
 </template>
+<template name="header"><div class="{{federal}}"></div></template>
+
 <template name="nice">test
     <ui>
     {{#each result.results}}
@@ -30,4 +30,21 @@
         <p>{{ngram}} - {{count}}</p>
     {{/each}}
     </ui>
+</template>
+<template name="bio">
+    <div id="bio_img_box" class="box">
+        {{#if result}}
+        <img id="bio_img" src="http://www.govtrack.us/data/photos/{{result.govtrack_id}}-200px.jpeg" />
+        {{else}}
+        <img id="bio_img" src="/img/hamsterload.gif" />
+        {{/if}}
+    </div>
+    <div class="content">
+        <p>{{#if result.chamber equals "senate"}}Senator{{else}}Delegate{{/if}} 
+           {{result.first_name}} {{result.middle_name}} {{result.last_name}} ({{result.party}})</p>
+        <p>Bioguide: {{result.bioguide_id}}</p>
+        <p>Birthday: {{result.birthday}}</p>
+        <p>Conact: </p>
+        <img id="bio_party_img" src={{party}}>
+    </div>
 </template>

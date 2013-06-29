@@ -1,0 +1,73 @@
+@base: #f938ab;
+
+.box-shadow(@style, @c) when (iscolor(@c)) {
+  box-shadow:         @style @c;
+  -webkit-box-shadow: @style @c;
+  -moz-box-shadow:    @style @c;
+}
+.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
+  .box-shadow(@style, rgba(0, 0, 0, @alpha));
+}
+.box { 
+  color: saturate(@base, 5%);
+  border-color: lighten(@base, 30%);
+  height:100px
+  div { .box-shadow(0 0 5px, 30%) }
+}
+
+.rounded-corners (@radius: 5px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  -ms-border-radius: @radius;
+  -o-border-radius: @radius;
+  border-radius: @radius;
+}
+
+#bio_img {
+  position: fixed;
+  left: 0;
+  top: 20em;
+  width: 20em;
+  margin-top: -2.5em;
+  .rounded-corners (25px)
+}
+
+#bio_party_img{
+  position: fixed;
+  left: 125em;
+  top: 20em;
+  width: 20em;
+  height: 20em;
+  margin-top: -2.5em;
+  .rounded-corners (25px)
+}
+
+body{
+	font-family: "Book Antiqua",Georgia,"MS Sans Serif", Geneva, sans-serif;
+	background: #A3181E url(/img/bg_body.gif) fixed repeat-x;
+	margin: 0;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+div.header_capitol{
+    height: 149px;
+    background: url(/img/Capitol_unselected.png) fixed no-repeat;
+}
+
+div.header_capitol_selected{
+    height: 149px;
+    background: url(/img/Capitol_Selected.png) fixed no-repeat;
+}
+
+div.content{
+    position: relative;
+    margin-left: 21em;
+    margin-top: 7.5em;
+    height: 100em;
+    width: 100em;
+    background: #eee;
+    font: 18px;
+    .rounded-corners (10px)
+}

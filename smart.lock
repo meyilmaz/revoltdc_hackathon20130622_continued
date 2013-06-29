@@ -9,7 +9,8 @@
       "router": {},
       "jquery-ui": {},
       "observatory": {},
-      "d3-cloud": {}
+      "d3-cloud": {},
+      "deps-extensions": {}
     },
     "packages": {
       "router": {
@@ -31,6 +32,11 @@
         "git": "https://github.com/Dsyko/meteor-d3-cloud.git",
         "tag": "v1.0.2",
         "commit": "ee0bbdfcad53ef74e65c777c718b3988c4cde0ee"
+      },
+      "deps-extensions": {
+        "git": "https://github.com/tmeasday/meteor-deps-extensions.git",
+        "tag": "v0.1.0",
+        "commit": "110462c0ba33aaeb35e55069134287325cc453e5"
       },
       "page-js-ie-support": {
         "git": "https://github.com/tmeasday/meteor-page-js-ie-support.git",
